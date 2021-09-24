@@ -1,6 +1,6 @@
 package com.example.androidbootcamp.exercise
 
-class question1 {
+class Question1 {
 
     companion object {
         const val fname = "Deepshikha"

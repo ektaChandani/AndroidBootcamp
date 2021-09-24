@@ -1,4 +1,4 @@
-package com.example.androidbootcamp
+package com.example.androidbootcamp.exercise
 
 interface BankDetails {
     val ROI: Double

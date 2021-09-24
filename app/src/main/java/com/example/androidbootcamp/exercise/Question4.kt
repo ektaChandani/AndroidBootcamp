@@ -1,26 +1,27 @@
 package com.example.androidbootcamp.exercise
 
-    abstract class Library {
-        var bookName: String = ""
-        var bookID: Int = 0
-        var bookAuthor: String = ""
+abstract class Library {
+    abstract fun addBook(bkName: String, bkID: Int, bkAuthor: String)
+}
 
-        abstract fun addbook(bkName: String, bkID: Int, bkAutor: String)
+interface BookDetails{
+    fun getBookDetails()
+}
 
-        abstract fun getbookDetails()
+class Question4: Library(), BookDetails{
+    private var bookName: String = ""
+    private var bookID: Int = 0
+    private var bookAuthor: String = ""
+
+    override fun addBook(bkName: String, bkID: Int, bkAuthor: String) {
+        bookName = bkName
+        bookID = bkID
+        bookAuthor = bkAuthor
     }
 
-    class Question4: Library(){
-
-        override fun addbook(bkName: String, bkID: Int, bkAutor: String) {
-            bookName = bkName
-            bookID = bkID
-            bookAuthor = bkAutor
-        }
-
-        override fun getbookDetails() {
-            println("Book id: $bookID")
-            println("Book name: $bookName")
-            println("Book author: $bookAuthor\n")
-        }
+    override fun getBookDetails() {
+        println("Book id: $bookID")
+        println("Book name: $bookName")
+        println("Book author: $bookAuthor\n")
     }
+}

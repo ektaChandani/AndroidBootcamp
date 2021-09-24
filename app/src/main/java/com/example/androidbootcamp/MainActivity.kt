@@ -1,7 +1,6 @@
 package com.example.androidbootcamp
 
-import android.graphics.Point
-import androidx.core.graphics.plus
+
 import com.example.androidbootcamp.exercise.*
 
 fun main() {
@@ -20,15 +19,15 @@ fun main() {
 
         println("Question 1")
         // Making Object of class
-        val ob1 = question1()
+        val ob1 = Question1()
         // calling method
         ob1.printDetails()
 
         // printing details from Companion object
         println("\n Value initialised from companion object")
-        println("First name: ${question1.fname}")
-        println("Last name: ${question1.lname}")
-        println("Age: ${question1.age}")
+        println("First name: ${Question1.fname}")
+        println("Last name: ${Question1.lname}")
+        println("Age: ${Question1.age}")
 
 //    Write a single program for following operation using overloading
 //            A) Adding 2 integer number
@@ -47,9 +46,9 @@ fun main() {
 
     ob.add(a = 10,b=20)
     obb.add(a=10.0 , b=50.0)
-    obbb.add(first = 50 , second = 25 , result = 0)
-    str.add(first = "Ekta" , second = "Chandani" , result = "")
-    str1.add(first = "Ekta" , second = "Chandani" , third = "Android  " , result = "")
+    obbb.multiply(first = 50 , second = 25 )
+    str.concat(first = "Ekta" , second = "Chandani" )
+    str1.concat1(first = "Ekta" , second = "Chandani" , third = "Android  ")
 
 
 
@@ -60,10 +59,10 @@ fun main() {
     println("\nQ4")
     val ob6 = Question4()
     val ob7 = Question4()
-    ob6.addbook("Introduction to OOPs", 1, "Ekta")
-    ob7.addbook("Introduction to Kotlib", 2, "Shweta")
-    ob6.getbookDetails()
-    ob7.getbookDetails()
+    ob6.addBook("Introduction to OOPs", 1, "Ekta")
+    ob7.addBook("Introduction to Kotlib", 2, "Shweta")
+    ob6.getBookDetails()
+    ob7.getBookDetails()
 
     // Q5 Write a function which take marks as an argument and return the the grade as follows:
     //marks between 50 to 60 , return “Good”
@@ -78,7 +77,7 @@ fun main() {
     // new value. Print the list value.
     println("\n Question6")
     val ob9 = Question6()
-    println("Original content in list: ${ob9.mlist}")
+    println("Original content in list: ${ob9.mList}")
     ob9.replaceSecondItem()
 
 

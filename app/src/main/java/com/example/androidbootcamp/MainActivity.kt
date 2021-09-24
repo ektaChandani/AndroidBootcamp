@@ -44,7 +44,7 @@ fun main() {
     val str1= Question2()
 
 
-    ob.add(a = 10,b=20)
+    ob.add(a = 10, b = 20)
     obb.add(a=10.0 , b=50.0)
     obbb.multiply(first = 50 , second = 25 )
     str.concat(first = "Ekta" , second = "Chandani" )

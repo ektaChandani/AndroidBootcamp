@@ -9,7 +9,7 @@ class Question2 {
         Employee("John", 40),
         Employee("Dev", 32),
         Employee("Joe", 24),
-        Employee("Shashank", 44)
+        Employee("Shank", 44)
     )
 
     fun createFilteredList(){

@@ -2,20 +2,20 @@ package com.example.androidbootcamp.exercise
 
 
 sealed class Question2 {
-    val message="Shapes are Circle , square"
-    fun getShape(base:Question2){
-        println("This is class from ${base.javaClass}")
+    fun getShape() {
+        println("This is class from ${this.javaClass}")
     }
-    class Circle:Question2(){
-
-    }
-    class Square:Question2(){
-    }
-    class Rectangle : Question2(){
-
-    }
-
-
-
-
 }
+class Circle:Question2(){
+//        fun getName(){
+//            getShape()
+//        }
+
+    }
+class Square:Question2(){
+//        fun getName(){
+//            getShape()
+//        }
+    }
+class Rectangle : Question2(){
+    }

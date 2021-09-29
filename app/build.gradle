@@ -15,6 +15,22 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+//    flavorDimension "default"
+//    productFlavors {
+//        prod {
+//            applicationId = "com.example.androidbootcamps"
+//            dimension 'default'
+//        }
+//        qa {
+//            applicationId = "com.login.example"
+//            dimension 'default'
+//        }
+//        dev {
+//            applicationId = "com.login.android"
+//            dimension 'default'
+//        }
+//    }
+
 
     buildTypes {
         release {

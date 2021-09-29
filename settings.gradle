@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidBootcamp"
 include ':app'
+include ':app:login'

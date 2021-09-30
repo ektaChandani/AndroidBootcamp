@@ -2,8 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
-
 android {
+    flavorDimensions "version"
     compileSdk 30
 
     defaultConfig {
@@ -15,21 +15,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-//    flavorDimension "default"
-//    productFlavors {
-//        prod {
-//            applicationId = "com.example.androidbootcamps"
-//            dimension 'default'
-//        }
-//        qa {
-//            applicationId = "com.login.example"
-//            dimension 'default'
-//        }
-//        dev {
-//            applicationId = "com.login.android"
-//            dimension 'default'
-//        }
-//    }
+
 
 
     buildTypes {
@@ -38,6 +24,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        prod {
+            applicationId = "com.login.prod"
+
+
+        }
+        qa {
+            applicationId = "com.login.qa"
+
+
+        }
+        dev {
+            applicationId = "com.login.dev"
+
+
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -45,6 +49,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {

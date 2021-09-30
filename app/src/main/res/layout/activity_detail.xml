@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:elevation="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
+    />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Username:"
+        android:textColor="#000"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center"
+        />
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Email:"
+            android:textColor="#000"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/tv_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Phone Number:"
+            android:textColor="#000"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/tv_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Password:"
+            android:textColor="#000"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            />
+        <EditText
+            android:id="@+id/et_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter URL"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#808080"
+            android:backgroundTint="@color/white"
+            android:textSize="15sp"
+            />
+        <Button
+            android:id="@+id/bt_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Camera Permission"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:background="@color/purple_500"
+            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:elevation="2dp"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/bt_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check URL"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:background="@color/purple_500"
+            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:elevation="2dp"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+

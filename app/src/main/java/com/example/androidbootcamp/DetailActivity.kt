@@ -24,7 +24,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var urlView: EditText
     private lateinit var btnCamera: Button
     private lateinit var btnUrl: Button
-
+    private lateinit var etUrl : EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -36,6 +36,8 @@ class DetailActivity : AppCompatActivity() {
         textPassword = findViewById(R.id.tv_password)
         btnCamera = findViewById(R.id.bt_camera)
         btnUrl = findViewById(R.id.bt_url)
+        etUrl = findViewById(R.id.et_url)
+
 
         val username = intent.getStringExtra("username")
         val email = intent.getStringExtra("email")
@@ -47,9 +49,9 @@ class DetailActivity : AppCompatActivity() {
         textPassword.text = "Password :" + password
 
         btnUrl.setOnClickListener {
-            if (urlView.text.isNotBlank()) {
+            if (etUrl.text.isNotBlank()) {
                 // Parsing Url in Android URI
-                val uri = Uri.parse("https://" + urlView.text.toString())
+                val uri = Uri.parse("https://" + etUrl.text.toString())
 
                 // create Implicit intent for browser
                 val launchBrowser = Intent(Intent.ACTION_VIEW, uri)

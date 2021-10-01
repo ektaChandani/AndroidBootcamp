@@ -24,7 +24,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var urlView: EditText
     private lateinit var btnCamera: Button
     private lateinit var btnUrl: Button
-    private lateinit var etUrl : EditText
+    private lateinit var etUrl: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -113,7 +113,4 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
-        const val CAMERA_PERMISSION_CODE = 1001
-    }
 }

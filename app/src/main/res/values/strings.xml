@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AndroidBootcamp</string>
+    <string name="heading_create_account">Create An Account</string>
+    <string name="user_name">Username</string>
+    <string name="email_id">Email Id</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="check_camera_permission">Check Camera Permission</string>
+    <string name="check_url">Check URL</string>
 </resources>

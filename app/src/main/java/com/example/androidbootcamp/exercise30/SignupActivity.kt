@@ -22,7 +22,7 @@ class SignupActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
         viewInitializations()
 
-        btnData= findViewById<Button>(R.id.bt_register)
+        btnData= findViewById(R.id.bt_register)
         btnData.setOnClickListener {
             startActivity(Intent(this,DetailActivity::class.java).putExtra("username" ,etUserName.text.toString())
                 .putExtra("email" , etEmail.text.toString())
@@ -36,23 +36,28 @@ class SignupActivity : AppCompatActivity() {
             val phonenumber = etPhoneNumber.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            if(username.isEmpty()){
-                etUserName.error = "Username Required"
-                return@setOnClickListener
+            when {
+                username.isEmpty() -> {
+                    etUserName.error = "Username Required"
+                    return@setOnClickListener
 
-            }else if (email.isEmpty()){
-                etEmail.error="Email Required"
-                return@setOnClickListener
-            }else if(phonenumber.isEmpty()){
-                etPhoneNumber.error = "PhoneNumber Required"
-                return@setOnClickListener
+                }
+                email.isEmpty() -> {
+                    etEmail.error="Email Required"
+                    return@setOnClickListener
+                }
+                phonenumber.isEmpty() -> {
+                    etPhoneNumber.error = "PhoneNumber Required"
+                    return@setOnClickListener
 
-            } else if (password.isEmpty()) {
-                etPassword.error = "PhoneNumber Required"
-                return@setOnClickListener
-            }else
-            {
-                Toast.makeText(this,"Signup Successful" , Toast.LENGTH_SHORT).show()
+                }
+                password.isEmpty() -> {
+                    etPassword.error = "PhoneNumber Required"
+                    return@setOnClickListener
+                }
+                else -> {
+                    Toast.makeText(this,"Signup Successful" , Toast.LENGTH_SHORT).show()
+                }
             }
 
         }

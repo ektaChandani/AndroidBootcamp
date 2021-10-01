@@ -3,13 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/login/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="app/login/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10520833333333333" />
-        <entry key="app/login/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10520833333333333" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_fragment_exercise.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
   </component>

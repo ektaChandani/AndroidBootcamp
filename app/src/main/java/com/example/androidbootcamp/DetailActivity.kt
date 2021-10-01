@@ -1,6 +1,6 @@
 package com.example.androidbootcamp
 
-import android.app.Activity
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -25,6 +25,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var btnCamera: Button
     private lateinit var btnUrl: Button
     private lateinit var etUrl: EditText
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -32,7 +33,7 @@ class DetailActivity : AppCompatActivity() {
 
         textUserName = findViewById(R.id.tv_username)
         textEmail = findViewById(R.id.tv_email)
-        textPhoneNumber = findViewById(R.id.tv_phonenumber)
+        textPhoneNumber = findViewById(R.id.tv_phone)
         textPassword = findViewById(R.id.tv_password)
         btnCamera = findViewById(R.id.bt_camera)
         btnUrl = findViewById(R.id.bt_url)
@@ -43,10 +44,10 @@ class DetailActivity : AppCompatActivity() {
         val email = intent.getStringExtra("email")
         val phonenumber = intent.getStringExtra("phonenumber")
         val password = intent.getStringExtra("password")
-        textUserName.text = "username: " + username
-        textEmail.text = "Email: " + email
-        textPhoneNumber.text = "Phone Number: " + phonenumber
-        textPassword.text = "Password :" + password
+        textUserName.text = "username: $username"
+        textEmail.text = "Email: $email"
+        textPhoneNumber.text = "Phone Number: $phonenumber"
+        textPassword.text = "Password :$password"
 
         btnUrl.setOnClickListener {
             if (etUrl.text.isNotBlank()) {

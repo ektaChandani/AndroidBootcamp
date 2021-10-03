@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">AndroidBootcamp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_demo">Fragment Demo</string>
+    <string name="dialog_fragment">Dialog Fragment</string>
+    <string name="preference_fragment">Preference Fragment</string>
+    <string name="first_fragment">I am First Fragment</string>
+    <string name="add_fragment_2">Add Fragment 2</string>
+    <string name="remove_fragment_2">Remove Fragment 2</string>
+    <string name="replace_fragment_2_with_3">Replace Fragment 2 with 3</string>
+    <string name="hide_fragment_2">Hide Fragment 2</string>
+    <string name="show_fragment_2">Show Fragment 2</string>
+    <string name="rotate_the_screen_to_see_changes">Rotate the screen to see changes</string>
+    <string name="add_first_fragment">Add First Fragment</string>
+    <string name="add_second_fragment">Add Second Fragment</string>
+    <string name="add_third_fragment">Add Third Fragment</string>
+    <string name="hello_world_ni_am_second_fragment">Hello World!\nI am Second Fragment</string>
+    <string name="hello_world_ni_am_third_fragment">Hello World!\nI am Third Fragment</string>
 </resources>

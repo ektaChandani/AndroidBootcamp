@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/first_fragment"
+        android:textSize="38sp"
+        android:textColor="@color/purple_500"
+        android:textStyle="italic|bold"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/addFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_fragment_2"
+        android:background="@color/teal_200"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/removeFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remove_fragment_2"
+        android:background="@color/teal_200"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/replaceFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/replace_fragment_2_with_3"
+        android:background="@color/teal_200"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/hideFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hide_fragment_2"
+        android:background="@color/teal_200"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/showFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_fragment_2"
+        android:background="@color/teal_200"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/rotate_the_screen_to_see_changes"
+        android:gravity="center"/>
+
+</LinearLayout>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_color"
+    android:layout_gravity="center"
     tools:context=".ThirdActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Restaurants"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        />
+        android:text="Restaurants"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -24,10 +24,58 @@
         android:layout_marginTop="70dp"
         android:layout_marginBottom="500dp"
         android:background="@drawable/menu1">
-
-
-
-
     </ImageView>
+
+    <TextView
+        android:id="@+id/tvdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_centerInParent="true"
+        android:text="Ice Cream Sundae"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvdetail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvdetail"
+        android:layout_centerInParent="true"
+        android:text="145 , Mall of India"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvdetail2"
+        >
+
+    </RatingBar>
+
+    <TextView
+        android:id="@+id/tvdetail3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/rating_bar"
+        android:layout_alignBottom="@+id/rating_bar"
+        android:text="526 reviews"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Go to Question 3"
+        android:textColor="@color/purple_200"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button">
+    </Button>
+
+
 
 </RelativeLayout>

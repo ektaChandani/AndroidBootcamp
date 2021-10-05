@@ -82,8 +82,6 @@ class FirstFragment: Fragment() {
             else {
                 Toast.makeText(activity, "Please click on Add Fragment 2 first", Toast.LENGTH_LONG).show()
             }
-
-
         }
 
         val replaceFragmentButton = requireView().findViewById<Button>(R.id.replaceFragmentBtn)

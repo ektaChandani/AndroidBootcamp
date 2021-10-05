@@ -22,7 +22,8 @@
         android:scaleType="fitXY"
         android:src="@drawable/menu1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customToolbar1" />
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar1"
+        android:contentDescription="@string/my_image" />
 
     <TextView
         android:id="@+id/titleTextView1"
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:text="Ice Cream Sundae"
+        android:text="@string/ice_cream_sundae"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
@@ -41,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="145, Mall of India"
+        android:text="@string/_145_mall_of_india"
         app:layout_constraintStart_toStartOf="@+id/titleTextView1"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView1" />
 
@@ -61,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="520 reviews"
+        android:text="@string/_520_reviews"
         app:layout_constraintStart_toEndOf="@+id/ratingBar1"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1" />
 
@@ -71,18 +72,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:drawableLeft="@drawable/ic_baseline_list_alt_24"
         android:drawablePadding="8dp"
-        android:text="01 Mar 2019 11 : 30 AM"
+        android:text="@string/_01_mar_2019_11_30_am"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        app:drawableStartCompat="@drawable/ic_baseline_list_alt_24" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="101dp"
-        android:text="Rs. 180"
+        android:text="@string/rs_180"
         android:textColor="#FF2300"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +94,7 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Question 2"
+        android:text="@string/go_to_question_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textColor="@color/purple_200"

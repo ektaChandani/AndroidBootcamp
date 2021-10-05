@@ -9,7 +9,7 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        val button: Button = findViewById<Button>(R.id.button3)
+        val button: Button = findViewById(R.id.button3)
         button.setOnClickListener{
             val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)

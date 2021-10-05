@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">AndroidBootcamp</string>
+    <string name="my_image">myimage</string>
+    <string name="ice_cream_sundae">Ice Cream Sundae</string>
+    <string name="_145_mall_of_india">145, Mall of India</string>
+    <string name="_520_reviews">520 reviews</string>
+    <string name="_01_mar_2019_11_30_am">01 Mar 2019 11 : 30 AM</string>
+    <string name="rs_180">Rs. 180</string>
+    <string name="go_to_question_2">Go to Question 2</string>
+    <string name="foodie_app">Foodie App</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="remember_me">Remember me</string>
+    <string name="don_t_have_an_account">Don\'t have an account ?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="go_to_question_1">Go to Question 1!</string>
 </resources>

@@ -60,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:id="@+id/reviews"
         android:text="520 reviews"
         app:layout_constraintStart_toEndOf="@+id/ratingBar1"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1" />
@@ -70,18 +71,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:drawableLeft="@drawable/list_icon"
         android:drawablePadding="8dp"
         android:text="01 Mar 2019 11 : 30 AM"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        app:drawableLeftCompat="@drawable/list_icon"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="101dp"
-        android:text="Rs. 180"
+        android:text="@string/rs_180"
+        android:id="@+id/amount"
         android:textColor="#FF2300"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

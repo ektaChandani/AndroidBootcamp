@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidBootcamp</string>
+    <string name="imagetextview">imagetext</string>
+    <string name="chinese_continental">Chinese Continental</string>
 </resources>

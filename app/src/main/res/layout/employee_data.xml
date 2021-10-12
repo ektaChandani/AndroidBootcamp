@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:text="Name"
+            android:text="@string/name"
             android:textColor="@color/black"
             android:textSize="@dimen/heading_text_size_18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:text="Contact"
+            android:text="@string/contact"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/empNameTextView"
             app:layout_constraintTop_toBottomOf="@+id/empNameTextView" />
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:text="Address"
+            android:text="@string/address"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/empContactTextView"
             app:layout_constraintTop_toBottomOf="@+id/empContactTextView" />
@@ -60,7 +60,8 @@
             app:layout_constraintHorizontal_bias="0.85"
             app:layout_constraintStart_toEndOf="@+id/empNameTextView"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintVertical_bias="0.3"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/deleteEmpDetailsBtn"
@@ -72,7 +73,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/editEmpDetailsBtn"
             app:layout_constraintStart_toStartOf="@+id/editEmpDetailsBtn"
-            app:layout_constraintTop_toBottomOf="@+id/editEmpDetailsBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/editEmpDetailsBtn"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -84,45 +86,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="@dimen/margin_16dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        tools:ignore="ExtraText">
 
         <EditText
             android:id="@+id/empNameEditTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:hint="Name"
+            android:hint="@string/name"
             android:textColor="@color/black"
             android:textSize="@dimen/heading_text_size_18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints=""
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/empContactEditTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:hint="Contact"
+            android:hint="@string/contact"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/empNameEditTextView"
-            app:layout_constraintTop_toBottomOf="@+id/empNameEditTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/empNameEditTextView"
+            android:autofillHints=""
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/empAddressEditTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:hint="Address"
+            android:hint="@string/address"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/empContactEditTextView"
-            app:layout_constraintTop_toBottomOf="@+id/empContactEditTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/empContactEditTextView"
+            android:importantForAutofill="no"
+            android:inputType="text">
+
+        </EditText>
 
         <Button
             android:id="@+id/updateDetailsBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:text="Update Details"
+            android:text="@string/update_details"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/empAddressEditTextView" />

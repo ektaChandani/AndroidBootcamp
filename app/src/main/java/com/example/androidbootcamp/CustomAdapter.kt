@@ -1,5 +1,6 @@
 package com.example.androidbootcamp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,16 +22,16 @@ class CustomAdapter(
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val empDetailsConstraintLayout: ConstraintLayout =
-            view.findViewById<ConstraintLayout>(R.id.empDetailsContraintLayout)
+            view.findViewById(R.id.empDetailsContraintLayout)
         val empDetailsEditConstraintLayout: ConstraintLayout =
-            view.findViewById<ConstraintLayout>(R.id.editEmpDetailsConstraintLayout)
+            view.findViewById(R.id.editEmpDetailsConstraintLayout)
 
         // Finding ref to show the details
         val nameTextView: TextView = view.findViewById(R.id.empNameTextView)
         val contactTextView: TextView = view.findViewById(R.id.empContactTextView)
         val addressTextView: TextView = view.findViewById(R.id.empAddressTextView)
         val editDataImgBtn: ImageButton = view.findViewById(R.id.editEmpDetailsBtn)
-        val deleteDataImgBtn: ImageButton = view.findViewById<ImageButton>(R.id.deleteEmpDetailsBtn)
+        val deleteDataImgBtn: ImageButton = view.findViewById(R.id.deleteEmpDetailsBtn)
 
         // Finding ref to edit the details
         val nameEditTextView: EditText = view.findViewById(R.id.empNameEditTextView)
@@ -161,6 +162,7 @@ class CustomAdapter(
     }
 
     // Update the item in list
+    @SuppressLint("NotifyDataSetChanged")
     private fun setItem(
         position: Int,
         empID: Int,
@@ -173,6 +175,7 @@ class CustomAdapter(
     }
 
     // delete item from list
+    @SuppressLint("NotifyDataSetChanged")
     private fun deleteItem(position: Int) {
         employeeData.removeAt(position)
         notifyDataSetChanged()

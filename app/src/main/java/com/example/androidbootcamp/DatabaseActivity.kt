@@ -1,5 +1,6 @@
 package com.example.androidbootcamp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +36,7 @@ class DatabaseActivity : AppCompatActivity() {
 
 
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setupListFromRoom() {
         val roomDatabaseBuilder = RoomDatabaseBuilder.getInstance(this)
         var employeeList: List<EmployeeData>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidBootcamp</string>
+    <string name="name">Name</string>
+    <string name="contact">Contact</string>
+    <string name="address">Address</string>
+    <string name="contact">Contact</string>
+    <string name="address">Address</string>
+    <string name="update_details">Update Details</string>
 </resources>

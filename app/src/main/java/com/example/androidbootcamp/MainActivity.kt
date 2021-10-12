@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         sqliteDemoBtn.setOnClickListener {
             startActivity(
                 Intent(this, DatabaseActivity::class.java).putExtra(
-                    MainActivity.BUTTON_CLICKED_KEY,
-                    MainActivity.ROOM_DEMO_BTN
+                    BUTTON_CLICKED_KEY,
+                    ROOM_DEMO_BTN
                 )
             )
         }

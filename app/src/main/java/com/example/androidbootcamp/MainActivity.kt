@@ -31,20 +31,8 @@ class MainActivity : AppCompatActivity() {
         setActionBar(toolbar)
 
         // add data in recycler view
+        datatosend.addAll(CustomData.getData())
 
-        for (i in 1..5) {
-            datatosend.add(
-                CustomData(
-                    "Ice Cream Sundae",
-                    "145, Mall of India",
-                    R.drawable.menu1,
-                    4,
-                    "500 reviews",
-                    "05 Oct 2021 2 : 00 PM",
-                    "Rs. 200"
-                )
-            )
-        }
 
         val recyclerView = findViewById<RecyclerView>(R.id.rv_list)
 
@@ -87,7 +75,6 @@ class MainActivity : AppCompatActivity() {
         })
     }
     //Fetches data after reaching to last element
-    @SuppressLint("NotifyDataSetChanged")
     private fun fetchData() {
         val progressBar = findViewById<ProgressBar>(R.id.progress)
         progressBar.visibility = View.VISIBLE
@@ -96,15 +83,8 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed({
             for (i in 1..5) {
                 datatosend.add(
-                    CustomData(
-                        "Ice Cream Sundae",
-                        "145, Mall of India",
-                        R.drawable.menu1,
-                        4,
-                        "500 reviews",
-                        "05 Oct 2021 2 : 00 PM",
-                        "Rs. 200"
-                    )
+                    CustomData.getCustomData()
+
                 )
                 customAdapter.notifyDataSetChanged()
                 progressBar.visibility = View.GONE

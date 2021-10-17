@@ -31,5 +31,13 @@
             android:text="Stop Music"
             android:layout_margin="4dp"/>
 
+
+
     </LinearLayout>
+    <Button
+        android:id="@+id/localServiceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Local Service"
+        android:layout_marginHorizontal="24dp" />
 </LinearLayout>

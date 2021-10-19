@@ -1,98 +1,74 @@
 package com.example.androidbootcamp
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.app.TaskStackBuilder
-import android.content.Context
-import android.content.Intent
-import android.graphics.Color
-import android.os.Build
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
+
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(){
+import android.app.job.JobInfo
+import android.app.job.JobScheduler
+import android.content.ComponentName
+import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
 
-    private val CHANNEL_ID = " channel_id"
-    private val CHANNEL_NAME= "channelName"
-    private val CHANNEL_ID_2 = " channel_id"
-    private val CHANNEL_NAME_2= "channelName"
-    private val NOTIFICATION_ID = 0
+class MainActivity : AppCompatActivity() {
+
+    lateinit var jobScheduler: JobScheduler
+    companion object{
+        //Job ID
+        const val jobId = 1
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Job Scheduler initialisation
+        jobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
 
-
-        val intent = Intent(this, MainActivity::class.java)
-        val pendingIntent = TaskStackBuilder.create(this).run {
-            addNextIntentWithParentStack(intent)
-            getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
+        btnStart.setOnClickListener {
+            //Start Job Implementation
+            startJob()
         }
 
-        createNotificationChannel()
-        createNotificationChannel2()
+        // You can cancel the job
+        // If it's not started yet
+        buttonStop.setOnClickListener {
+            //Stop Job Implementation
+            stopJob()
+        }
 
 
-        // creating notification channel 1
 
-        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("my notification")
-            .setContentText("This is my notification")
-            .setSmallIcon(R.drawable.ic_launcher_background)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setContentIntent(pendingIntent)
+
+    }
+
+    //Stop job
+    private fun stopJob() {
+        jobScheduler.cancel(jobId)
+    }
+    //Start job
+    private fun startJob() {
+        Toast.makeText(this, "Job will start in few seconds...", Toast.LENGTH_SHORT).show()
+
+        val jobService = ComponentName(this, NotificationScheduler::class.java)
+        //setting constraints in Job Info
+        val jobInfo = JobInfo
+            .Builder(jobId, jobService)
+            .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+//            .setPeriodic(10000)
+//            .setOverrideDeadline(10000)
+//            .setMinimumLatency(5000)
             .build()
 
-        val notificationManager = NotificationManagerCompat.from(this)
-
-        btnShowNotification.setOnClickListener {
-            notificationManager.notify(NOTIFICATION_ID, notification)
+        //Scheduling job
+        jobScheduler.schedule(jobInfo)
+        if (jobScheduler.schedule(jobInfo) <= 0) {
+            Toast.makeText(this, "There is problem while scheduling job", Toast.LENGTH_SHORT).show()
         }
 
+    }
 
 
-        // creating notification channel 2
-        val notification2 = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("my notification 2 ")
-            .setContentText("This is my notification 2")
-            .setSmallIcon(R.drawable.ic_launcher_background)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .build()
 
-        val notificationManager2 = NotificationManagerCompat.from(this)
-    }
-// notification channel 1
-    private fun createNotificationChannel2() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_ID_2,
-                CHANNEL_NAME_2,
-                NotificationManager.IMPORTANCE_DEFAULT
-            ).apply {
-                lightColor = Color.GREEN
-                enableLights(true)
-            }
-            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            manager.createNotificationChannel(channel)
-        }
-    }
-// notification channel 2
-    private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_ID_2,
-                CHANNEL_NAME_2,
-                NotificationManager.IMPORTANCE_DEFAULT
-            ).apply {
-                lightColor = Color.GREEN
-                enableLights(true)
-            }
-            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            manager.createNotificationChannel(channel)
-        }
-    }
+
 }

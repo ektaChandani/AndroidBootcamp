@@ -1,5 +1,6 @@
 package com.example.androidbootcamp
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +11,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.StringBuilder
 
 
 const val BASE_URL =" https://jsonplaceholder.typicode.com"
@@ -29,7 +29,7 @@ class MainActivity :AppCompatActivity(){
 
             if (getIdToFetch.isNullOrEmpty() || getIdToFetch.toString().toInt() > 10 || getIdToFetch.toString().toInt() < 1
             ) {
-                edittext_id.setError("Enter digit between 1 to 10")
+                edittext_id.error = "Enter digit between 1 to 10"
             } else {
                 getMyData(getIdToFetch.toString().toInt())
             }
@@ -47,6 +47,7 @@ class MainActivity :AppCompatActivity(){
 
         val retrofitData=retrofitBuilder.getAId(id)
         retrofitData.enqueue(object : Callback<List<DataModelItem>?> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(
                 call: Call<List<DataModelItem>?>,
                 response: Response<List<DataModelItem>?>
@@ -54,7 +55,7 @@ class MainActivity :AppCompatActivity(){
                 val responseBody = response.body()!!
 
                 for (myData in responseBody) {
-                    textview_id.text = "Post Id: ${myData.id.toString()}"
+                    textview_id.text = "Post Id: ${myData.id}"
                     textview_title.text = "Title: ${myData.title}"
                     textview_body.text = "Body: ${myData.body}"
 

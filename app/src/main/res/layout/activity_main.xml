@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
 
     <TextView
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:gravity="center"
-        android:text="ID's Between 1 to 10"
+        android:text="@string/id_s_between_1_to_10"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,12 +32,13 @@
         android:layout_marginVertical="28dp"
         android:textColor="@color/black"
         android:textColorHint="@color/white"
-        android:hint="Enter number"
+        android:hint="@string/enter_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:inputType="number" />
+        android:inputType="number"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/getDetailsBtn"
@@ -45,7 +47,7 @@
         android:layout_marginHorizontal="100dp"
         android:layout_marginTop="20dp"
         android:padding="10dp"
-        android:text="Get Details"
+        android:text="@string/get_details"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittext_id" />
@@ -78,7 +80,8 @@
                 android:padding="10dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="ID" />
+                android:text="@string/id"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/textview_title"
@@ -87,7 +90,7 @@
                 android:textColor="@color/black"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:text="Title" />
+                android:text="@string/title" />
 
             <TextView
                 android:id="@+id/textview_body"
@@ -96,7 +99,7 @@
                 android:padding="10dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="Body" />
+                android:text="@string/body" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

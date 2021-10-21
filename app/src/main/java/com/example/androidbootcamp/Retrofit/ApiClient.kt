@@ -1,20 +1,19 @@
 package com.example.androidbootcamp.Retrofit
 
 
-import android.util.Log
 import com.example.androidbootcamp.MyApplication
 import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 
 object ApiClient {
-    private const val TAG = "ApiClient"
-    private const val BASE_URL = "https://storage.googleapis.com/network-security-conf-codelab.appspot.com/"
+    private const val TAG = "APIClient"
     private const val HEADER_CACHE_CONTROL = "Cache-Control"
     private const val HEADER_PRAGMA = "Pragma"
     private const val cacheSize = (5 * 1024 * 1024).toLong()
@@ -22,21 +21,21 @@ object ApiClient {
     /**
      * return client
      */
-    val getClient: ApiInterface
-        get() {
-            return retrofit().create(ApiInterface::class.java)
-        }
+    val getClient: ApiInterface by lazy {
+        Retrofit.Builder()
+            .baseUrl("https://storage.googleapis.com/network-security-conf-codelab.appspot.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient())
+            .build()
+            .create(ApiInterface::class.java)
+
+    }
+
 
     /**
      * prepare and return retrofit
      */
-    private fun retrofit(): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(okHttpClient())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+
 
     /**
      * prepare and return okHttpClient
@@ -104,10 +103,10 @@ object ApiClient {
     /**
      * httpLoggingInterceptor instance
      */
-    private fun httpLoggingInterceptor(): HttpLoggingInterceptor {
-        val httpLoggingInterceptor = HttpLoggingInterceptor { message -> Log.d(TAG, "log: http log: $message") }
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        return httpLoggingInterceptor
+    private fun httpLoggingInterceptor(): Interceptor {
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        return interceptor
     }
 
 

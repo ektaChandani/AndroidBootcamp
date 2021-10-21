@@ -11,38 +11,42 @@ import com.example.androidbootcamp.Adapters.MyAdapter.MyViewHolder
 import com.example.androidbootcamp.Models.Post
 import com.example.androidbootcamp.R
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.row_item.view.*
 
-class MyAdapter(private val dataList : MutableList<Post>) : RecyclerView.Adapter<MyViewHolder>(){
+class MyAdapter(private val context: Context, private val dataList: List<Post>) : RecyclerView.Adapter<MyViewHolder>(){
     class MyViewHolder (itemView: View) :RecyclerView.ViewHolder(itemView){
         var image:ImageView
         var txt_name : TextView
         var message : TextView
 
         init {
-            image=itemView.profile_image
-            txt_name=itemView.txt_name
-            message=itemView.txt_message
+            image=itemView.findViewById(R.id.imageView)
+            txt_name=itemView.findViewById(R.id.tv_userid)
+            message=itemView.findViewById(R.id.tv_title)
         }
 
     }
 
-private lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        context = parent.context
-        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.row_item , parent , false))
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_item , parent , false)
+        return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val data = dataList[position]
 
-        Picasso.get().load(dataList[position].profileImage).into(holder.image)
-        holder.txt_name.text=dataList[position].name
-        holder.message.text=dataList[position].message
+        holder.txt_name.text = dataList[position].name
+        holder.message.text = dataList[position].message
+        val profileImgURL = dataList[position].profileImage
+//        Glide.with(context).load(profileImgURL)
+//            .into(holder.image)
+
+        Picasso.get().load(profileImgURL)
+//            .placeholder(R.mipmap.ic_launcher)
+            .into(holder.image)
     }
 
     override fun getItemCount(): Int {
-        return dataList.size    }
+        return dataList.size
+    }
 }
 
 

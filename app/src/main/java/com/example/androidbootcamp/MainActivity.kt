@@ -9,8 +9,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 
 const val BASE_URL =" https://jsonplaceholder.typicode.com"
@@ -39,14 +37,9 @@ class MainActivity :AppCompatActivity(){
     }
 
     private fun getMyData(id: Int) {
-        val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl( BASE_URL)
-            .build()
-            .create(ApiInterface::class.java)
 
-        val retrofitData=retrofitBuilder.getAId(id)
-        retrofitData.enqueue(object : Callback<List<DataModelItem>?> {
+        val retrofitData=ApiClient.getApiClient()?.getAId(id)
+        retrofitData?.enqueue(object : Callback<List<DataModelItem>?> {
             @SuppressLint("SetTextI18n")
             override fun onResponse(
                 call: Call<List<DataModelItem>?>,

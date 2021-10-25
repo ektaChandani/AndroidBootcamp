@@ -25,6 +25,7 @@
         </activity>
 
         <service android:name=".NewService" />
+            android:exported="true"/>
     </application>
 
 </manifest>

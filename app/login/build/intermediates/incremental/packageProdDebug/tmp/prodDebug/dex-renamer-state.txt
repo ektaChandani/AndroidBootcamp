@@ -1,0 +1,10 @@
+#Thu Sep 30 12:37:11 IST 2021
+base.2=/home/ekta/AndroidStudioProjects/AndroidBootcamp/app/login/build/intermediates/dex/prodDebug/mergeProjectDexProdDebug/15/classes.dex
+path.2=15/classes.dex
+base.1=/home/ekta/AndroidStudioProjects/AndroidBootcamp/app/login/build/intermediates/dex/prodDebug/mergeProjectDexProdDebug/0/classes.dex
+path.1=0/classes.dex
+base.0=/home/ekta/AndroidStudioProjects/AndroidBootcamp/app/login/build/intermediates/dex/prodDebug/mergeExtDexProdDebug/classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

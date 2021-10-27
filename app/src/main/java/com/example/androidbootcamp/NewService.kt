@@ -23,7 +23,7 @@ class NewService : Service() {
         // providing the boolean
         // value as true to play
         // the audio on loop
-        player.setLooping(true)
+        player.isLooping = true
 
         // starting the process
         player.start()

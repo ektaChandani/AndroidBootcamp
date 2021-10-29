@@ -10,7 +10,13 @@ class RecyclerViewAdapter(private val data:List<DataModel>): RecyclerView.Adapte
 
     inner class MyViewHolder(val binding: ItemViewBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(item:DataModel){
-            binding.listitems = item
+           with(binding){
+            textView.text=item.name
+            textView1.text=item.email
+               textView2.text=item.phoneNumber.toString()
+               textView3.text=item.address
+           }
+
 
 
         }

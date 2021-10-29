@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/textView"
@@ -19,5 +19,32 @@
             android:text="@{listitems.name}"
             tools:layout_editor_absoluteX="164dp"
             tools:layout_editor_absoluteY="323dp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_marginTop="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{listitems.email}"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="323dp" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_marginTop="65dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{listitems.phoneNumber}"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="323dp" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_marginTop="95dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{listitems.address}"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="323dp" />
+
+
     </LinearLayout>
 </layout>

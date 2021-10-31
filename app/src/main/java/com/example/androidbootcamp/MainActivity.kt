@@ -1,36 +1,32 @@
 package com.example.androidbootcamp
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import com.example.androidbootcamp.databinding.ActivityMainBinding
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity :AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    private val viewModel: TestViewModel by viewModels()
+//    lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: TestViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.lifecycleOwner = this
-        binding.testviewmodel = viewModel
-//        viewModel.observe(this, {
-//            binding.testviewmodel.toString()
-//        })
+        setContentView(R.layout.activity_main)
+        viewModel = ViewModelProvider(this).get(TestViewModel::class.java)
 
-//        viewModel.currentNumber.observe(this, Observer {
-//        textview2.text= it.toString()
-//        })
-//
-//        viewModel.currentBoolean.observe(this, Observer {
-//            textview1.text = it.toString()
-//        })
+        colourbutton.setOnClickListener {
+            colourFragmentLayout.setBackgroundColor(viewModel.colour)
+            viewModel.changeBackgroundColor()
 
-//        generateColor()
+        }
     }
 
-
+        override fun onResume() {
+            super.onResume()
+            // Getting last updated value from viewModel
+            // So that in case of configuration change,last updated value remains with user
+            colourFragmentLayout.setBackgroundColor(viewModel.colour)
+        }
     }

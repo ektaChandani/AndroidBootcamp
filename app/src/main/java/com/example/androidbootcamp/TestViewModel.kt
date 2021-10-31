@@ -7,26 +7,27 @@ import kotlin.random.Random
 class TestViewModel: ViewModel() {
 
 
-    fun generateColor(): Int {
+    private val colorArray = arrayOf(
+        Color.BLACK,
+        Color.BLUE,
+        Color.DKGRAY,
+        Color.GRAY,
+        Color.GREEN,
+        Color.MAGENTA
+    )
 
-        val random: Random = Random
-        val color: Int =
-            Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256))
-//            viewModel.currentNumber.value =++viewModel.number
-//            viewModel.currentBoolean.value=viewModel.number%2==0
+    var colour = colorArray[0]
 
-        return color
+
+    //Setting Background
+    fun changeBackgroundColor() {
+        colour = colorArray[randomNumberGenerator()]
     }
 
+    // Generate random number
+    private fun randomNumberGenerator(): Int {
+        val startRange = 0
+        val endRange = colorArray.size
+        return Random.nextInt(startRange, endRange)
+    }
 }
-
-//    var number = 0
-//    val currentNumber:MutableLiveData<Int> by lazy {
-//        MutableLiveData<Int>()
-//    }
-//
-//    val currentBoolean :MutableLiveData<Boolean> by lazy {
-//        MutableLiveData<Boolean>()
-//    }
-
-

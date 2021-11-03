@@ -12,6 +12,7 @@ class ViewModel(app:Application):AndroidViewModel(app) {
     init {
 
         allUsers = MutableLiveData()
+        getAllUsers()
     }
     fun getAllUsersObservers():MutableLiveData<List<UserEntity>>{
         return allUsers
@@ -19,6 +20,7 @@ class ViewModel(app:Application):AndroidViewModel(app) {
     fun getAllUsers(){
         val userDao = RoomAppData.getAppDatabase((getApplication()))?.userDao()
         val list = userDao?.getAllUserInfo()
+        allUsers.postValue(list)
     }
     fun insertUserInfo(entity: UserEntity){
         val userDao = RoomAppData.getAppDatabase(getApplication())?.userDao()

@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidbootcamp.roomdb.UserEntity
 import kotlinx.android.synthetic.main.row_item.view.*
 
-class RecyclerViewAdapter (val listener:RowClickListener):RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>(){
+class RecyclerViewAdapter (private val listener:RowClickListener):RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>(){
 
-    var items = ArrayList<UserEntity>()
+    private var items = ArrayList<UserEntity>()
 
     fun setListData(data:ArrayList<UserEntity>){
         this.items = data
@@ -31,7 +31,7 @@ class RecyclerViewAdapter (val listener:RowClickListener):RecyclerView.Adapter<R
 
         return items.size   }
 
-    class MyViewHolder(view: View , val listener: RowClickListener) :RecyclerView.ViewHolder(view){
+    class MyViewHolder(view: View, private val listener: RowClickListener) :RecyclerView.ViewHolder(view){
 
         val tvName = view.tvName
         val tvEmail = view.tvEmail

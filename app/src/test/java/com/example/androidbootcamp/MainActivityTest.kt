@@ -12,6 +12,7 @@ import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
 import org.mockito.runners.MockitoJUnitRunner
 
+
 /**
  * Mockito Unit Testing [Not completed]
  * TODO
@@ -43,3 +44,5 @@ class MainActivityTest {
         assert(actualResult.value == false)
     }
 }
+
+
